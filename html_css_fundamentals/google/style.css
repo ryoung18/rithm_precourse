@@ -1,0 +1,67 @@
+body{
+    font-family: 'Open Sans', sans-serif;    
+}
+
+.sign_in_button{
+	background-color: #1E90FF;
+	border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.button{
+	background-color: #DCDCDC;
+	border: none;
+    color: #505050;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form{
+	margin: 20px;
+}
+
+
+
+a{
+	color: #000000;
+	padding-left: 10px;
+}
+
+a:link {
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+nav{
+    text-align: right;
+    font-size: 13px;
+}
+
+footer {
+	width: 100%;
+}
+
+input{
+	width: 600px;
+	height: 30px;
+}
