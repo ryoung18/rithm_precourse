@@ -1,0 +1,39 @@
+/*You'll need to set a fixed width for your wrap, and then float the navigation div.
+You may also want to fiddle with widths/margins of the navigation and content divisions!
+For this and the next few challenges, you may want to first look through MaxDesign's Two columns with colour tutorial.*/
+/*https://en.wikiversity.org/wiki/Web_Design/CSS_challenges*/
+
+body{
+  background-color: #003F87;
+}
+
+#wrap{
+  display: flex;
+  justify-content: center;
+  width: 650px;
+  margin: auto;
+
+
+
+}
+
+#content{
+  text-align: center;
+  padding: 10px;
+  background-color: #0276FD;
+}
+
+#nav{
+  padding: 10px;
+  width: 450px;
+  background-color: #C6E2FF;
+}
+
+#content ul{
+    list-style-type: none;
+}
+
+.copyright{
+  position: absolute;
+  bottom: 100;
+}
