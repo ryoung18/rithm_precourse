@@ -1,43 +1,65 @@
-window.onload = function (){
-// localStorage.clear()
+// window.onload = function (){
 
-  let tBody = document.querySelector("tbody");
-  let todoArray = JSON.parse(localStorage.getItem("todoList")) || [];
-  let addButton = document.getElementById("todo_button")
+  let turn = 0;
+  let pSel= [];
+  let player = function (){ return turn % 2 === 0 ? "X" : "O" }
+ 
 
-  if(todoArray[0]){
-    for(let i = 0; i < todoArray.length; i++){
-        let savedTr = document.createElement("tr");
-        savedTr.innerHTML = "<td>"+todoArray[i]+"</td>"
-        tBody.appendChild(savedTr)
+  //player selection - addEventListener
+    //record player selection in playerSelection array
+    //mark player selection on webpage
+    //show next player on webpage
+
+    function playerChoice(num){
+      pSel[num] = player();
+      checkWinner();
+    }
+
+
+
+  //check if won
+    //min 5 turns to win.
+      // winning combinations 012, 036, 048, 147, 246, 258, 345, 678
+  function checkWinner(){
+    let check = player().repeat(3)
+
+    if(turn >= 5-1){
+      if(
+          pSel[0]+pSel[1]+pSel[2] === check ||
+          pSel[0]+pSel[3]+pSel[6] === check ||
+          pSel[0]+pSel[4]+pSel[8] === check ||
+          pSel[1]+pSel[4]+pSel[7] === check ||
+          pSel[2]+pSel[4]+pSel[6] === check ||
+          pSel[3]+pSel[4]+pSel[5] === check ||
+          pSel[2]+pSel[5]+pSel[8] === check ||
+          pSel[6]+pSel[7]+pSel[8] === check 
+          ) {
+         console.log("Player " + player() + " Wins!" )
+      }
+    } else {
+      turn++
     }
   }
+      
 
-  //add todo
-  addButton.addEventListener("click", function(){
-    let newTodos = document.getElementById("new_todo");
-    let newTr = document.createElement("tr");
-    if(newTodos.value && todoArray.indexOf(newTodos.value) === -1){
-      newTr.innerHTML = '<td>'+ newTodos.value;
-      tBody.insertBefore(newTr, tBody.childNodes[0]);
-      todoArray.unshift(newTodos.value)
-    }
-  })
+   
 
-  //Remove row
-  tBody.addEventListener("dblclick", function(event){
-    let removeRow = event.target.parentElement;
-    todoArray.splice(todoArray.indexOf(event.target.innerText),1)
-    tBody.removeChild(removeRow)
+// }
+playerChoice(0);
 
-  })
 
-  window.onbeforeunload = function () {
-    if(todoArray[0]){
-      localStorage.setItem("todoList", JSON.stringify(todoArray)) 
-    } else {
-      localStorage.clear();
-    }
-  };
+playerChoice(8);
 
-}
+
+playerChoice(1);
+
+
+playerChoice(7);
+
+
+
+playerChoice(2);
+
+
+
+
