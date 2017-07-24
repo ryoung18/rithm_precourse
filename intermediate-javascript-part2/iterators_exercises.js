@@ -1,0 +1,207 @@
+/*
+Iterators Exercises.
+https://www.rithmschool.com/courses/intermediate-javascript-part-2/javascript-iterators-exercises
+
+Part I
+Use the following object for this set of questions:
+*/
+
+var users = [
+{
+  username: "larry",
+  email: "larry@foo.com",
+  yearsExperience: 22.1,
+  favoriteLanguages: ["Perl", "Java", "C++"],
+  favoriteEditor: "Vim",
+  hobbies: ["Fishing", "Sailing", "Hiking"],
+  hometown: {
+    city: "San Francisco",
+    state: "CA"
+  }
+},
+{
+  username: "jane",
+  email: "jane@test.com",
+  yearsExperience: 33.9,
+  favoriteLanguages: ["Haskell", "Clojure", "PHP"],
+  favoriteEditor: "Emacs",
+  hobbies: ["Swimming", "Biking", "Hiking"],
+  hometown: {
+    city: "New York",
+    state: "NY"
+  }
+},
+{
+  username: "sam",
+  email: "sam@test.com",
+  yearsExperience: 8.2,
+  favoriteLanguages: ["JavaScript","Ruby", "Python", "Go"],
+  favoriteEditor: "Atom",
+  hobbies: ["Golf", "Cooking", "Archery"],
+  hometown: {
+    city: "Fargo",
+    state: "SD"
+  }
+},
+{
+  username: "anne",
+  email: "anne@test.com",
+  yearsExperience: 4,
+  favoriteLanguages: ["C#", "C++", "F#"],
+  favoriteEditor: "Visual Studio Code",
+  hobbies: ["Tennis", "Biking", "Archery"],
+  hometown: {
+    city: "Albany",
+    state: "NY"
+  }
+},
+{
+  username: "david",
+  email: "david@test.com",
+  yearsExperience: 12.5,
+  favoriteLanguages: ["JavaScript", "C#", "Swift"],
+  favoriteEditor: "Sublime Text",
+  hobbies: ["Volunteering", "Biking", "Coding"],
+  hometown: {
+    city: "Los Angeles",
+    state: "CA"
+  }
+}
+]
+
+// Write a function called printEmails which console.log's each email for the users.
+function printEmails(){
+	users.forEach(el => console.log(el.email))
+}
+
+// printEmails()
+// larry@foo.com
+// jane@test.com
+// sam@test.com
+// anne@test.com
+// david@test.com
+// Write a function called printHobbies which console.log's each hobby for each user.
+
+function printHobbies(){
+	users.forEach(el => {
+		el.hobbies.forEach(hobby => console.log(hobby))
+	})
+}
+
+// printHobbies()
+// "Fishing", 
+// "Sailing", 
+// "Hiking",
+// "Swimming", 
+// "Biking", 
+// "Hiking",
+// "Golf", 
+// "Cooking", 
+// "Archery",
+// "Tennis", 
+// "Biking", 
+// "Archery",
+// "Volunteering", 
+// "Biking", 
+// "Coding",
+// Write a function called findHometownByState which returns the first user which has a hometown of the state that is passed in
+function findHometownByState(state){
+	return users.find(val => val.hometown.state === state)
+}
+
+findHometownByState("CA")
+
+/*/
+{
+    username: "larry",
+    email: "larry@foo.com",
+    years_experience: 22.1,
+    favorite_languages: ["Perl", "Scala", "C++"],
+    favorite_editor: "Vim",
+    hobbies: ["Fishing", "Sailing", "Hiking"],
+    hometown: {
+        city: "San Francisco",
+        state: "CA"
+    }
+}
+/*/
+// Write a function called allLanguages which returns an array of all of the unique values
+
+
+
+
+function allLanguages(){
+ return	users.reduce((acc,el) => {
+		el.favoriteLanguages.forEach(lang => {
+			if(acc.indexOf(lang) === -1){
+				acc.push(lang)
+			}
+		})
+
+		return acc;
+	},users[0].favoriteLanguages)
+}
+
+allLanguages()
+// ["Perl", "Scala", "C++","Haskell", "PHP","JavaScript","Ruby", "Python", "Go","C#", "F#", "Swift"]
+// Write a function called hasFavoriteEditor which returns a boolean if any of the users have the editor passed in
+function hasFavoriteEditor(editor){
+	return users.some(el => el.favoriteEditor === editor)
+}
+hasFavoriteEditor("Sublime Text") // true
+hasFavoriteEditor("Eclipse") // false
+// Write a function called findByUsername which takes in a string and returns an object in the users array that has that username
+function findByUsername(name){
+	return users.find(el=> el.username === name )
+
+}
+
+findByUsername("david") 
+
+/*/
+{
+    username: "david",
+    email: "david@test.com",
+    years_experience: 12.5,
+    favorite_languages: ["JavaScript", "C#", "Swift"],
+    favorite_editor: "Sublime Text",
+    hobbies: ["Volunteering", "Biking", "Coding"],
+    hometown: {
+        city: "Los Angeles",
+        state: "CA"
+    }
+}
+/*/
+// Part II
+// Write a function called vowelCount that accepts a string and returns an object with each key being the vowel and the value being the number of times the vowel occurs in the string (the order of keys in the object does not matter).
+
+let vowels = ['a', 'e', 'i', 'o', 'u'];
+function vowelCount(string){
+	let arr = string.split('');
+
+
+	 return arr.filter(el => vowels.indexOf(el) > -1)
+	 				   .reduce((acc, el) => {
+	 				   	 if(acc[el]){
+	 				   	 	 acc[el]++;
+	 				   	 } else {
+	 				   	 	acc[el] = 1
+	 				   	 }
+	 				   	 return acc;
+	 				   },{})
+}
+
+vowelCount("incredible"),
+// {i:2, e: 2}
+
+vowelCount("awesome")
+// {a:1, e:2, o:1}
+// Write a function called removeVowels that accepts a string and returns an array of each character that is not a vowel (y should not count as a vowel for this function).
+function removeVowels(string){
+	let arr = string.split('');
+	return arr.filter(el => vowels.indexOf(el) === -1) 
+}
+
+removeVowels("amazing"), // ["m","z","n","g"]
+removeVowels("fun"), // ["f","n"]
+removeVowels("silly") // ["s","l","l","y"]
