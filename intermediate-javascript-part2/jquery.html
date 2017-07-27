@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercise</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+
+<button>Click me</button>
+<div style="width:100px;height:100px;background:green;"></div>
+
+<script>
+// $(document).ready(function(){
+//   $("button").click(function(){
+//     $("div").animate({height:"toggle"}).append("hi");
+//   });
+// });
+
+//properties of the animation
+var animationConfig = {upToHeight:200};
+//when document is loaded
+$(document).ready(function(){
+  //when any <button> element is clicked
+  $("button").click(function(){
+    //change the height of all <div>s
+    $("div").animate({height:animationConfig.upToHeight});
+  });
+});
+
+</script>
+
+
+
+
+
+
+
+    <div id="container">
+        <h1 id="welcome"></h1>
+        <div class="list-container" style="border: 3px solid ">
+            <ul class="nav">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About Us</li>
+                <li class="nav-item">Contact</li>
+                <li class="nav-item">Careers</li>
+                <li class="nav-item">Apply</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container" style="border: 3px solid ">
+            <ul class="footer-nav">
+                <li class="footer-nav-item">Learn More</li>
+                <li class="footer-nav-item">Blog</li>
+                <li class="footer-nav-item">Email Us</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

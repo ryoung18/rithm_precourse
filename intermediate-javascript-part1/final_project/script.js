@@ -13,7 +13,7 @@ window.onload = function (){
     let selections = document.getElementById(i);
 
     selections.addEventListener("click", function (){
-      if(pSel[i] === undefined){
+      if(pSel[i] === undefined && turn < 9){
         selections.innerText = player();
         pSel[i] = player();
         checkWinner() //hmmm alert displays before updating innerText.
@@ -26,8 +26,9 @@ window.onload = function (){
   function checkWinner(){
     let check = player().repeat(3)
     let currentPlayer = player();
+    let display;
   
-    if(turn >= 5-1){
+    if(turn >= 4){
       if(
           pSel[0]+pSel[1]+pSel[2] === check ||
           pSel[0]+pSel[3]+pSel[6] === check ||
@@ -38,14 +39,15 @@ window.onload = function (){
           pSel[2]+pSel[5]+pSel[8] === check ||
           pSel[6]+pSel[7]+pSel[8] === check 
           ) {
-         turn = 9
-         return alert("Player " + currentPlayer + " Wins!" )
+
+         display = currentPlayer + " Wins!";
+         turn = 9; 
       } else if (turn === 8){
-        return alert("Tie")
+         display = "Tie";
       }
     }
       turn++;
-      showPlayer.innerHTML = player();
+      showPlayer.innerHTML = display? display : player();
   }
       
 
