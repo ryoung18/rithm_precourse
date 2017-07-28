@@ -63,7 +63,7 @@
   function updateGame(e) {
     let $target = $(e.target)
     
-    if ($target.is("li"), $target.text(), !$target.hasClass('disabled')) {
+    if ($target.is("li") && !$target.hasClass('disabled')) {
       // grab guessed word, check it against password, update view
       var $guess = $target.text();
       var $similarityScore = compareWords($guess, $password);
@@ -74,10 +74,10 @@
       // check whether the game is over
       if ($similarityScore === $password.length) {
         $("#winner").toggleClass('show hide');
-        $(this).off('click', updateGame);
+        $(this).off();
       } else if ($guessCount === 0) {
         $("#loser").toggleClass('show hide');
-        $(this).off('click', updateGame);
+        $(this).off();
       }
     }
   }

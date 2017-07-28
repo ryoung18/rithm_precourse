@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Exercise - Part 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center"><strong>My Favorite Movies</strong></h2>
+
+    <!-- Add movie -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-2">
+            <label>Title</label>
+          </div>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="movie" placeholder="Movie Title">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-2">
+            <label>Rating </label>
+          </div>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="rating" placeholder="Rate the movie from  0 to 10">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+          <button type="submit" class="btn btn-default" id="addBtn"> Add Movie </  button>
+      </div>
+    </div>
+    
+    <br>
+
+    <!-- Table to display output -->
+    <table class="table table-striped table-hover table-bordered text-center">
+      <thead>
+        <tr>
+          <th class="col-md-8 text-center">Title</th>
+          <th class="col-md-2 text-center">Rating</th>
+          <th class="col-md-2 text-center">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+<!--         <tr>
+          <td>Steph</td>
+          <td>Warriors</td>
+          <td><button class="btn btn-sm btn-block btn-danger">Delete</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+    <hr>  
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
