@@ -1,55 +1,57 @@
+// $(function() {
+
+	let apiWebsite = 'http://www.omdbapi.com/?apikey=thewdb&t='
+
+	let $hideBtn = $('#removeBtn');
+	let $searchBtn = $('#searchBtn');
+	let $img = $('.img');
+	let $show = $('#search-section');
+	let toggleShow = false;
+
+	$show.hide()
 
 
-let $movie = $('#movie');
-let $rating = $('#rating');
-let $tbody = $('tbody');
-let $addBtn = $('#addBtn');
-let movieObj = {};
+	$hideBtn.on('click', function () {
+		if(toggleShow){
+         	$show.slideToggle(500);
+         	toggleShow = false; 
+		} 
+	})
 
-//Rating input - Accept only values from 0 to 10
-$rating.keyup(function(e){
-	let val = $(e.target);
-	let numCheck = val.val() >=0 && val.val() <=10;
 
-	if(!numCheck){
-		val.val('');
-	}
+	$searchBtn.on('click', function () {
+		let search = $('#search').val().toLowerCase().trim();
+		
+		if(!toggleShow){
+         	$show.slideToggle(500);
+         	toggleShow = true; 
+		} 
+        
 
-})
 
-//Add item to table
-$addBtn.on("click", function(){
-	$title = $movie.val()
-								 .trim();
 
-	if(movieObj[$title.toLowerCase()] === undefined && !($rating.val() === '') && !($title === '')){
-		movieObj[$title.toLowerCase()] = $title;
+		$.getJSON(apiWebsite+search).then(function(response){
+			
+			let $movieDetails = $('.search').children().children();
 
-		$tbody.append(
-			'<tr> <td>' +
-					$title +
-				'</td><td>' + 
-					+$rating.val() +
-				'</td><td>' +
-					'<button class="btn btn-sm btn-block btn-danger deleteButton">Delete</button>' + 
-			'</td></tr>')
+			for(let i = 0; i < $movieDetails.length; i++ ){
+				let $id = $movieDetails.eq(i).attr('id');
 
-		$movie.val('')
-		$rating.val('')
+				if(response[$id]){
+					$('#'+$id).text(response[$id])
+				} else {
+					$('#'+$id).text('N/A')
+				}
+			}
 
-	}
-})
+			if(response.Poster){
+				$img.attr('src',response.Poster)
+			} else {
+				$img.attr('src','https://vignette3.wikia.nocookie.net/canadians-vs-vampires/images/a/a4/Not_available_icon.jpg')
+			}
+		});
 
-// Delete Title
-$tbody.on('click', 'button', function(e){
-	let remove = $(e.target).parent()
-													.prev()
-													.prev()
-													.html()
-													.toLowerCase();
-	
-	delete movieObj[remove];
 
-	$(e.target).parent().parent().remove()
-})
+	})
 
+// })

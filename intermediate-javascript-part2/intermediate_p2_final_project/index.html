@@ -91,14 +91,30 @@
       padding:0;
       margin:0;
     }
+
+    .hide{
+
+    }
+
+    .show {
+      min-height: 200px;
+      transition: margin 1s ease;
+    }
+
+    .hide {
+      max-height: 0;
+      transition: margin 1s ease;
+    }
+
 /*https://www.w3schools.com/colors/colors_shades.asp*/
   </style>
 
 </head>
 <body>
-  <!-- Top Nav -->
-  <div class="container border" style="width: 1024px" >
+  
+  <div class="container border" style="width: 1024px" > <!-- Container -->
 
+    <!-- Top Nav -->
     <div class="row topNav">
       <div class="col-xs-8">
         <p>
@@ -112,6 +128,7 @@
         <p> Updated 7/29/2017 8:07 A.M. Pacific Time </p>
       </div>
     </div>
+    <!-- End Top Nav -->
 <!--
     <div class="row">
       <div class="col-md-4">
@@ -131,6 +148,7 @@
         <img class="pull-right" src="http://ds.serving-sys.com/resources/PROD/asset/111249/IMAGE/20170727/Landline_banners_728x90_NP_30238230665232956.jpg" alt="">
       </div>
     </div>
+    <!-- End Logo and ad -->
 
     <!-- Social Media Icons -->
     <div class="row height100">
@@ -140,14 +158,16 @@
         <img class="icon" src="http://www.boxofficemojo.com/images/glyphicons-social-31-facebook@2x.png" alt="">
       </div>
     </div>
+    <!-- End Social Media Icons -->
 
+    <div class="row"> <!-- Main content -->
 
-    <div class="row">
       <!-- Left Nav -->
       <div class="col-xs-2 leftNav">
         <h5> <strong>Search Movie</strong> </h5>
-        <input type="text" class="form-control input-xs" id="movie" placeholder="Movie Title">
-        <button type="submit" class="btn btn-xs btn-default" id="addBtn"> Search... </button>
+        <input type="text" class="form-control input-xs" id="search" placeholder="Movie Title">
+        <button type="submit" class="btn btn-xs btn-default" id="searchBtn"> Search... </button>
+        <button type="submit" class="btn btn-xs btn-default" id="removeBtn"> Remove </button>
         
         <br>
         <br>
@@ -182,177 +202,199 @@
           <li><a href="#">Theater Counts </a></li>
         </ul>
       </div>
+      <!-- End Left Nav -->
 
-      <!-- Top Story and Showdowns -->
-      <div class="col-xs-4" style="margin-left: -1em;">
-        <div class="s">
+      <div class="col-xs-10" style="margin-left: -1em;"> <!-- Right Main -->
+        
+        <div class="row" id="search-section"> <!-- Right Top main Content -->
+          <!-- Search Results -->
           <p class="header"> SEARCH RESULT </p>
           <hr>
-          <h3 class="text-center"> Titanic </h3>
-          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg" alt="..." class="img-thumbnail img-responsive">
-          
-
-        </div>
-
-
-        <p class="header"> TOP STORY </p>
-        <hr>
-        <h3>'Emoji Movie' Tops Friday Box Office, Battling for Weekend #1 with 'Dunkirk'</h3>
-        <p>by Brad Brevet</p>
-        <p><strong>July 27 - Updated with Friday estimates...</strong> Not since <strong> Wonder Woman</strong> seven weeks ago has a film repeat atop the weekend box office. This weekend, Dunkirk is looking to do just that. Christopher Nolan's war drama faces incoming challenges in the form of Sony's animated feature <strong>The Emoji Movie</strong> and Focus's actioner Atomic Blonde starring Charlize Theron.</p>
-        <hr>
-        <p class="text-right text"> > MORE STORIES </p>
-
-
-        <br>
-        <p class="header"> SHOWDOWNS </p>
-        <hr>
-
-        <p class="text-center"> Broughton v. Wick </p>
-        <div class="row text">
-          <div class="col-md-3 col-md-offset-1">
-            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
-            1-Day Total:
-            $7,100,000
+          <div class="col-md-7">
+            <ul class="search" style="padding: .5em">
+                <li style="padding-bottom: .1em">Title: <span id="Title" >   Titanic, </span></li>
+                <li style="padding-bottom: .1em">Year: <span id="Year">   1997,  </span></li>
+                <li>  Rated:  <span id="Rated">   PG-13, </span></li>
+                <li>  Released: <span id="Released">   19 Dec 1997, </span></li>
+                <li>  Runtime:  <span id="Runtime">   194 min, </span></li>
+                <li>  Genre:  <span id="Genre">   Drama, Romance,  </span></li>
+                <li>  Director: <span id="Director">   James Cameron, </span></li>
+                <li>  Writer: <span id="Writer">   James Cameron, </span></li>
+                <li>  Actors: <span id="Actors">  Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, </span></li>
+                <li>  Plot: <span id="Plot">   A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic., </span></li>
+                <li>  Language: <span id="Language">   English, Swedish,  </span></li>
+                <li>  Country:  <span id="Country">   USA, </span></li>
+                <li>  Awards: <span id="Awards">  Won 11 Oscars. Another 110 wins &amps; 74 nominations.,  </span></li>
+                <li>  Production: <span id="Production">  Paramount Pictures, </span></li>
+                <li>  Website:  <span id="Website">  http://www.titanicmovie.com/, </span></li>
+            </ul>
+  
+         
           </div>
-          <div class="col-md-3 col-md-offset-3">
-            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
-            1-Day Total:
-            $5,449,563
+          <div class="col-md-5">
+              <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg" alt="..." class="img-thumbnail img-responsive img">
           </div>
-        </div>
-        <p class="text-center"> > VIEW FULL SHOWDOWN </p>
-
-        <p class="text-center"> Broughton v. Wick </p>
-        <div class="row text">
-          <div class="col-md-3 col-md-offset-1">
-            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
-            1-Day Total:
-            $7,100,000
-          </div>
-          <div class="col-md-3 col-md-offset-3">
-            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
-            1-Day Total:
-            $5,449,563
-          </div>
-        </div>
-        <p class="text-center"> > VIEW FULL SHOWDOWN </p>
+          <br>
+          <br>
+          <!-- End Search Results -->
+        </div><!-- End Right Top main Content -->
         
+         <div class="row"> <!-- Right Bottom main Content -->
+                  <!-- Top Story and Showdowns -->
+                  <div class="col-xs-4" style="margin-left: -1em;">
+                    <p class="header"> TOP STORY </p>
+                    <hr>
+                    <h3>'Emoji Movie' Tops Friday Box Office, Battling for Weekend #1 with 'Dunkirk'</h3>
+                    <p>by Brad Brevet</p>
+                    <p><strong>July 27 - Updated with Friday estimates...</strong> Not since <strong> Wonder Woman</strong> seven weeks ago has a film repeat atop the weekend box office. This weekend, Dunkirk is looking to do just that. Christopher Nolan's war drama faces incoming challenges in the form of Sony's animated feature <strong>The Emoji Movie</strong> and Focus's actioner Atomic Blonde starring Charlize Theron.</p>
+                    <hr>
+                    <p class="text-right text"> > MORE STORIES </p>
 
 
-      </div>
+                    <br>
+                    <p class="header"> SHOWDOWNS </p>
+                    <hr>
 
-      <!-- Stats -->
-      <div class="col-xs-3"> <!--Column 3 -->
+                    <p class="text-center"> Broughton v. Wick </p>
+                    <div class="row text">
+                      <div class="col-md-3 col-md-offset-1">
+                        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+                        1-Day Total:
+                        $7,100,000
+                      </div>
+                      <div class="col-md-3 col-md-offset-3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+                        1-Day Total:
+                        $5,449,563
+                      </div>
+                    </div>
+                    <p class="text-center"> > VIEW FULL SHOWDOWN </p>
 
+                    <p class="text-center"> Broughton v. Wick </p>
+                    <div class="row text">
+                      <div class="col-md-3 col-md-offset-1">
+                        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+                        1-Day Total:
+                        $7,100,000
+                      </div>
+                      <div class="col-md-3 col-md-offset-3">
+                        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+                        1-Day Total:
+                        $5,449,563
+                      </div>
+                    </div>
+                    <p class="text-center"> > VIEW FULL SHOWDOWN </p>
+                  </div>
+                  <!-- End Top Story -->
 
-        <p class="header left-align">FRIDAY ESTIMATES</p>      
-        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
-          <div class="row">
-            <div class="col-xs-8" style="padding-left: .8em">
-                1.  The Emoji Movie <br>
-                2.  Dunkirk <br>
-                3.  Atomic Blonde
-            </div>
-            <div class="col-xs-4">
-                $10,050,00 <br>
-                $8,000,000 <br>
-                $7,100,000
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-right">
-              > VIEW FULL DAILY CHART
-            </div>
-          </div>
-       </div>
+                  <!-- Stats-->
+                  <div class="col-xs-4">
+                    <p class="header left-align">FRIDAY ESTIMATES</p>      
+                    <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
+                      <div class="row">
+                        <div class="col-xs-8" style="padding-left: .8em">
+                            1.  The Emoji Movie <br>
+                            2.  Dunkirk <br>
+                            3.  Atomic Blonde
+                        </div>
+                        <div class="col-xs-4">
+                            $10,050,00 <br>
+                            $8,000,000 <br>
+                            $7,100,000
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 text-right">
+                          > VIEW FULL DAILY CHART
+                        </div>
+                      </div>
+                   </div>
 
-        <br>
+                    <br>
 
-        <p class="header left-align">TOP 2017 MOVIES</p>      
-        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
-          <div class="row">
-            <div class="col-xs-8" style="padding-left: .8em">
-              1.  Beauty and the Beast <br>  
-              2.  Wonder Woman <br>
-              3.  Guardians of the Galaxy 2 <br>
-              4.  Spider-Man: Homecoming <br>
-              5.  Logan <br>
-            </div>
-            <div class="col-xs-4" style="padding:0;">
-              $504,014,165 <br>
-              $392,888,706 <br>
-              $387,572,407 <br>
-              $268,806,805 <br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-right">
-              > VIEW FULL DAILY CHART
-            </div>
-          </div>
-        </div>
-        <br>
+                    <p class="header left-align">TOP 2017 MOVIES</p>      
+                    <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
+                      <div class="row">
+                        <div class="col-xs-8" style="padding-left: .8em">
+                          1.  Beauty and the Beast <br>  
+                          2.  Wonder Woman <br>
+                          3.  Guardians of the Galaxy 2 <br>
+                          4.  Spider-Man: Homecoming <br>
+                          5.  Logan <br>
+                        </div>
+                        <div class="col-xs-4" style="padding:0;">
+                          $504,014,165 <br>
+                          $392,888,706 <br>
+                          $387,572,407 <br>
+                          $268,806,805 <br>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 text-right">
+                          > VIEW FULL DAILY CHART
+                        </div>
+                      </div>
+                    </div>
+                    <br>
 
-        <p class="header left-align">FRIDAY ESTIMATES</p>      
-        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1.2em;">  
-          <div class="row">
-            <div class="col-xs-8" style="padding-left: .8em">
-                1.  The Emoji Movie <br>
-                2.  Dunkirk <br>
-                3.  Atomic Blonde
-            </div>
-            <div class="col-xs-4">
-                $10,050,00 <br>
-                $8,000,000 <br>
-                $7,100,000
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 text-right">
-              > VIEW FULL DAILY CHART
-            </div>
-          </div>
-       </div>
-        <br>
+                    <p class="header left-align">FRIDAY ESTIMATES</p>      
+                    <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1.2em;">  
+                      <div class="row">
+                        <div class="col-xs-8" style="padding-left: .8em">
+                            1.  The Emoji Movie <br>
+                            2.  Dunkirk <br>
+                            3.  Atomic Blonde
+                        </div>
+                        <div class="col-xs-4">
+                            $10,050,00 <br>
+                            $8,000,000 <br>
+                            $7,100,000
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 text-right">
+                          > VIEW FULL DAILY CHART
+                        </div>
+                      </div>
+                   </div>
+                    <br>
 
-        <p class="header left-align">LATEST UPDATES</p>    
-        <hr style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
-        <ul class="text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
-          <li> DAILY: Friday Estimates, 'Emoji Movie' #1 </li>
-          <li> WEEKLY: 'Dunkirk' Tops the Week with $74.7m </li>
-          <li> DAILY: Thursday, 7/27 (44 tracked) </li>
-          <li> DAILY: Wednesday, 7/26 (35 tracked) </li>
-          <li> DAILY: Tuesday, 7/25 (36 tracked) </li>
-          <li> New MPAA Ratings Added </li>
-          <li> DAILY: Monday, 7/24 (34 tracked) </li>
-          WEEKEND: Weekend Actuals, 'Dunkirk' #1 </li>
-        </ul>
-        
-        <p class="text-right text"> > MORE UPDATES </p>
+                    <p class="header left-align">LATEST UPDATES</p>    
+                    <hr style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
+                    <ul class="text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
+                      <li> DAILY: Friday Estimates, 'Emoji Movie' #1 </li>
+                      <li> WEEKLY: 'Dunkirk' Tops the Week with $74.7m </li>
+                      <li> DAILY: Thursday, 7/27 (44 tracked) </li>
+                      <li> DAILY: Wednesday, 7/26 (35 tracked) </li>
+                      <li> DAILY: Tuesday, 7/25 (36 tracked) </li>
+                      <li> New MPAA Ratings Added </li>
+                      <li> DAILY: Monday, 7/24 (34 tracked) </li>
+                      WEEKEND: Weekend Actuals, 'Dunkirk' #1 </li>
+                    </ul>
+                    
+                    <p class="text-right text"> > MORE UPDATES </p>
 
-        <br>
+                    <br>
 
-      </div><!--End Column 3 -->
+                  </div>
+                  <!--End Stats-->
 
-      <!-- Right column ads -->
-      <div class="col-xs-3">
-        <p class="header"> SHOWTIMES &amp; TICKETS</p>
-        <hr>
-        
-        <br>
-        <p class="text"><img src="http://www.boxofficemojo.com/images/mojo_imdb_med.png" alt=""> Get local showtimes at IMDb </p>
+                  <!-- Right column ads -->
+                  <div class="col-xs-4">
+                    <p class="header"> SHOWTIMES &amp; TICKETS</p>
+                    <hr>
+                    <br>
+                    <p class="text"><img src="http://www.boxofficemojo.com/images/mojo_imdb_med.png" alt=""> Get local showtimes at IMDb </p>
+                    <br>
+                    <img class="img-responsive" src="http://ds.serving-sys.com/resources/PROD/asset/111249/IMAGE/20170727/TheBigSick_300x250_static_5-NowPlaying_30238244231710231.jpg" alt="">
+                    <br>
+                    <img class="img-responsive" src="http://www.boxofficemojo.com/images/ProMojo.png" alt="">
+                  </div>
+                  <!-- End Right column -->
 
-        <br>
-        
-        <img class="img-responsive" src="http://ds.serving-sys.com/resources/PROD/asset/111249/IMAGE/20170727/TheBigSick_300x250_static_5-NowPlaying_30238244231710231.jpg" alt="">
-
-        <br>
-        <img class="img-responsive" src="http://www.boxofficemojo.com/images/ProMojo.png" alt="">
-
-
-      </div>
-    </div>
+        </div><!-- End Right Bottom main Content -->
+      </div> <!-- End Right Main -->
+    </div> <!-- End Main content -->
 
     <footer>
       
@@ -367,7 +409,7 @@
 <br>
 <br>
 <br>
-  </div>
+  </div> <!-- End Container -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="script.js"></script>
