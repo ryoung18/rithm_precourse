@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Exercise - Part 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+  <style>
+    body{
+      background: #D3D3D3;
+    }
+    .topNav{
+      background: gray;
+      color: #ffffff;
+      font-size: 0.8em;
+    }
+
+    .topNav a{
+      color: #ffffff;
+    }
+    
+    a{
+      text-decoration-style: none;
+    }
+    
+    .border{
+      border: 1px solid #000000;
+      background: #ffffff;
+    }
+
+    .border-bottom{
+      border-bottom: 1px solid #cecece;
+    }
+
+    .logo{
+      padding-top: 20px;
+    }
+
+    .headLiner{
+      padding-right: 0;
+
+      text-align: right;
+    }
+
+    .lightgray{
+      background: #F0F0F0;
+    }
+  
+    .height100{
+      height: 6em;
+      margin-top: 1em;
+    }
+
+    .icon{
+      height: 1.5em;
+      padding-left: 0.7em;
+    }
+
+    p.header, p.header + hr, h3{ 
+      margin: 0;
+      border-color: #000000;
+      color: red;
+      font-weight: bold;
+    }
+
+    p{
+      font-size: 1em;
+    }
+
+    h5, hr{
+      margin: 0; 
+    }
+
+    ul{
+      list-style: none;
+      padding-left: 0.5em;
+
+    }
+
+    .input-xs{
+      border-radius: 0; 
+      height: 1.5em;
+    }
+
+    .left-align{
+      margin-left: -1em !important;
+    }
+
+    .text{
+      font-size: .8em;
+      padding:0;
+      margin:0;
+    }
+/*https://www.w3schools.com/colors/colors_shades.asp*/
+  </style>
+
+</head>
+<body>
+  <!-- Top Nav -->
+  <div class="container border" style="width: 1024px" >
+
+    <div class="row topNav">
+      <div class="col-xs-8">
+        <p>
+           <a href="#">Daily Box Office (Fri.)</a> | 
+           <a href="#">Weekend Box Office (Jul. 21–23)</a> | 
+           <a href="#">#1 Movie: 'Dunkirk'</a> | 
+           <a href="#">Showtimes</a>
+        </p>
+      </div>
+      <div class="col-xs-4 text-right">
+        <p> Updated 7/29/2017 8:07 A.M. Pacific Time </p>
+      </div>
+    </div>
+<!--
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-8">
+      
+      </div>
+    </div>
+ -->
+    <!-- Logo and ad -->
+    <div class="row border-bottom lightgray">
+      <div class="col-xs-3">
+        <img class="img-responsive logo" src="http://www.boxofficemojo.com/img/misc/bom_logo1.png" alt="">
+      </div>
+      <div class="col-xs-9 headLiner">
+        <img class="pull-right" src="http://ds.serving-sys.com/resources/PROD/asset/111249/IMAGE/20170727/Landline_banners_728x90_NP_30238230665232956.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="row height100">
+      <div class="col-md-12 text-right">
+        <img class="icon" src="http://www.boxofficemojo.com/images/IMDbPro.png" alt="">
+        <img class="icon" src="http://www.boxofficemojo.com/images/glyphicons-social-32-twitter@2x.png" alt="">
+        <img class="icon" src="http://www.boxofficemojo.com/images/glyphicons-social-31-facebook@2x.png" alt="">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <!-- Left Nav -->
+      <div class="col-xs-2 leftNav">
+        <h5> <strong>Search Movie</strong> </h5>
+        <input type="text" class="form-control input-xs" id="movie" placeholder="Movie Title">
+        <button type="submit" class="btn btn-xs btn-default" id="addBtn"> Search... </button>
+        
+        <br>
+        <br>
+
+        <h5><strong>Features</strong></h5>
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Release Sched.</a></li>
+          <li><a href="#">Showtimes</a></li>
+        </ul>
+
+        <h5><strong>Box Office</strong></h5>
+        <ul>
+          <li><a href="#">Daily </a></li>
+          <li><a href="#">Weekend </a></li>
+          <li><a href="#">Weekly </a></li>
+          <li><a href="#">Monthly </a></li>
+          <li><a href="#">Quarterly</a></li>
+          <li><a href="#">Seasonal </a></li>
+          <li><a href="#">Yearly </a></li>
+          <li><a href="#">All Time </a></li>
+          <li><a href="#">International </a></li>
+        </ul>
+
+        <h5><strong>Indice</strong></h5>
+        <ul>
+          <li><a href="#">Studios </a></li>
+          <li><a href="#">People </a></li>
+          <li><a href="#">Genres </a></li>
+          <li><a href="#">Franchises </a></li>
+          <li><a href="#">Showdowns</a></li>
+          <li><a href="#">Theater Counts </a></li>
+        </ul>
+      </div>
+
+      <!-- Top Story and Showdowns -->
+      <div class="col-xs-4" style="margin-left: -1em;">
+        <div class="s">
+          <p class="header"> SEARCH RESULT </p>
+          <hr>
+          <h3 class="text-center"> Titanic </h3>
+          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg" alt="..." class="img-thumbnail img-responsive">
+          
+
+        </div>
+
+
+        <p class="header"> TOP STORY </p>
+        <hr>
+        <h3>'Emoji Movie' Tops Friday Box Office, Battling for Weekend #1 with 'Dunkirk'</h3>
+        <p>by Brad Brevet</p>
+        <p><strong>July 27 - Updated with Friday estimates...</strong> Not since <strong> Wonder Woman</strong> seven weeks ago has a film repeat atop the weekend box office. This weekend, Dunkirk is looking to do just that. Christopher Nolan's war drama faces incoming challenges in the form of Sony's animated feature <strong>The Emoji Movie</strong> and Focus's actioner Atomic Blonde starring Charlize Theron.</p>
+        <hr>
+        <p class="text-right text"> > MORE STORIES </p>
+
+
+        <br>
+        <p class="header"> SHOWDOWNS </p>
+        <hr>
+
+        <p class="text-center"> Broughton v. Wick </p>
+        <div class="row text">
+          <div class="col-md-3 col-md-offset-1">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+            1-Day Total:
+            $7,100,000
+          </div>
+          <div class="col-md-3 col-md-offset-3">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+            1-Day Total:
+            $5,449,563
+          </div>
+        </div>
+        <p class="text-center"> > VIEW FULL SHOWDOWN </p>
+
+        <p class="text-center"> Broughton v. Wick </p>
+        <div class="row text">
+          <div class="col-md-3 col-md-offset-1">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5NDYzMzg5N15BMl5BanBnXkFtZTgwOTM2NDU1MjI@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+            1-Day Total:
+            $7,100,000
+          </div>
+          <div class="col-md-3 col-md-offset-3">
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_UY119_CR0,0,80,119_AL.jpg" alt="">
+            1-Day Total:
+            $5,449,563
+          </div>
+        </div>
+        <p class="text-center"> > VIEW FULL SHOWDOWN </p>
+        
+
+
+      </div>
+
+      <!-- Stats -->
+      <div class="col-xs-3"> <!--Column 3 -->
+
+
+        <p class="header left-align">FRIDAY ESTIMATES</p>      
+        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
+          <div class="row">
+            <div class="col-xs-8" style="padding-left: .8em">
+                1.  The Emoji Movie <br>
+                2.  Dunkirk <br>
+                3.  Atomic Blonde
+            </div>
+            <div class="col-xs-4">
+                $10,050,00 <br>
+                $8,000,000 <br>
+                $7,100,000
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-right">
+              > VIEW FULL DAILY CHART
+            </div>
+          </div>
+       </div>
+
+        <br>
+
+        <p class="header left-align">TOP 2017 MOVIES</p>      
+        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">  
+          <div class="row">
+            <div class="col-xs-8" style="padding-left: .8em">
+              1.  Beauty and the Beast <br>  
+              2.  Wonder Woman <br>
+              3.  Guardians of the Galaxy 2 <br>
+              4.  Spider-Man: Homecoming <br>
+              5.  Logan <br>
+            </div>
+            <div class="col-xs-4" style="padding:0;">
+              $504,014,165 <br>
+              $392,888,706 <br>
+              $387,572,407 <br>
+              $268,806,805 <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-right">
+              > VIEW FULL DAILY CHART
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <p class="header left-align">FRIDAY ESTIMATES</p>      
+        <div class="border text" style="margin-left: -1em; padding-left: 1em; padding-right: 1.2em;">  
+          <div class="row">
+            <div class="col-xs-8" style="padding-left: .8em">
+                1.  The Emoji Movie <br>
+                2.  Dunkirk <br>
+                3.  Atomic Blonde
+            </div>
+            <div class="col-xs-4">
+                $10,050,00 <br>
+                $8,000,000 <br>
+                $7,100,000
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-right">
+              > VIEW FULL DAILY CHART
+            </div>
+          </div>
+       </div>
+        <br>
+
+        <p class="header left-align">LATEST UPDATES</p>    
+        <hr style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
+        <ul class="text" style="margin-left: -1em; padding-left: 1em; padding-right: 1em;">
+          <li> DAILY: Friday Estimates, 'Emoji Movie' #1 </li>
+          <li> WEEKLY: 'Dunkirk' Tops the Week with $74.7m </li>
+          <li> DAILY: Thursday, 7/27 (44 tracked) </li>
+          <li> DAILY: Wednesday, 7/26 (35 tracked) </li>
+          <li> DAILY: Tuesday, 7/25 (36 tracked) </li>
+          <li> New MPAA Ratings Added </li>
+          <li> DAILY: Monday, 7/24 (34 tracked) </li>
+          WEEKEND: Weekend Actuals, 'Dunkirk' #1 </li>
+        </ul>
+        
+        <p class="text-right text"> > MORE UPDATES </p>
+
+        <br>
+
+      </div><!--End Column 3 -->
+
+      <!-- Right column ads -->
+      <div class="col-xs-3">
+        <p class="header"> SHOWTIMES &amp; TICKETS</p>
+        <hr>
+        
+        <br>
+        <p class="text"><img src="http://www.boxofficemojo.com/images/mojo_imdb_med.png" alt=""> Get local showtimes at IMDb </p>
+
+        <br>
+        
+        <img class="img-responsive" src="http://ds.serving-sys.com/resources/PROD/asset/111249/IMAGE/20170727/TheBigSick_300x250_static_5-NowPlaying_30238244231710231.jpg" alt="">
+
+        <br>
+        <img class="img-responsive" src="http://www.boxofficemojo.com/images/ProMojo.png" alt="">
+
+
+      </div>
+    </div>
+
+    <footer>
+      
+
+    </footer>
+  
+
+ 
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
